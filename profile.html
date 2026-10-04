@@ -1,0 +1,932 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio Website</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            width: 100%;
+            min-height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 35px;
+
+            background-color: rgb(16, 16, 16);
+        }
+
+
+        .web {
+            color: white;
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+
+            white-space: nowrap;
+        }
+
+        .web:hover {
+            color: #4da6ff;
+        }
+
+
+        .goto {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 45px;
+        }
+
+
+        .color,
+        .Home3 {
+            text-decoration: none;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+
+            white-space: nowrap;
+        }
+
+
+        .color {
+            color: white;
+        }
+
+
+        .color:hover {
+            color: #4da6ff;
+        }
+
+
+        .Home3 {
+            color: #4da6ff;
+        }
+
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+
+        .hero {
+            width: 100%;
+            min-height: 650px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 70px 7% 40px;
+            gap: 40px;
+        }
+
+
+        /* LEFT SIDE */
+
+        .hero-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+
+        .developer,
+        .developer1 {
+            color: #4da6ff;
+
+            font-family: italic, sans-serif;
+
+            font-size: clamp(70px, 9vw, 120px);
+
+            font-weight: 400;
+            line-height: 0.9;
+
+            margin: 0;
+        }
+
+
+        .developer1 {
+            margin-top: 10px;
+        }
+
+
+        /* RIGHT SIDE */
+
+        .profile-image {
+            flex: 0 0 500px;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+        }
+
+
+        /* PROFILE IMAGE */
+
+        .image1 {
+            width: 500px;
+            height: 500px;
+
+            display: block;
+
+            border-radius: 50%;
+
+            border: 2px solid #4da6ff;
+
+            object-fit: cover;
+
+            /*
+              Your face is slightly higher in the original
+              portrait image, so this keeps the face centered.
+            */
+            object-position: center 25%;
+
+            transition: all 0.3s ease;
+        }
+
+
+        .image1:hover {
+            transform: translateY(-8px);
+
+            border-color: #4da6ff;
+
+            box-shadow: 0 0 20px #4da6ff;
+        }
+
+
+        /* RESUME BUTTON */
+
+        .resume-button {
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 12px 30px;
+
+            background-color: #4da6ff;
+
+            color: black;
+
+            text-decoration: none;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            border-radius: 5px;
+
+            transition: all 0.3s ease;
+        }
+
+
+        .resume-button:hover {
+            transform: translateY(-5px);
+
+            box-shadow: 0 0 15px #4da6ff;
+        }
+
+
+        /* =========================
+           ABOUT / NAME SECTION
+        ========================= */
+
+        .about {
+            width: 100%;
+
+            padding: 70px 7% 30px;
+        }
+
+
+        .ankit-name {
+            color: #4da6ff;
+
+            font-family: 'Playfair Display', serif;
+
+            font-size: clamp(45px, 7vw, 100px);
+
+            line-height: 1.1;
+
+            margin-bottom: 40px;
+        }
+
+
+        /* =========================
+           TECHNICAL EXPERTISE
+        ========================= */
+
+        .technical {
+            color: white;
+
+            font-size: clamp(32px, 4vw, 50px);
+
+            font-family: Arial, sans-serif;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* =========================
+           SKILL CARDS
+        ========================= */
+
+        .experience {
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+
+            margin-bottom: 60px;
+        }
+
+
+        .fronted,
+        .java,
+        .linux {
+
+            width: 100%;
+            min-height: 360px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 25px;
+
+            color: white;
+
+            background-color: black;
+
+            font-size: 30px;
+
+            cursor: pointer;
+
+            border: 1px solid #555;
+
+            border-radius: 10px;
+
+            transition: all 0.3s ease;
+        }
+
+
+        .fronted:hover,
+        .java:hover,
+        .linux:hover {
+
+            border-color: #4da6ff;
+
+            transform: translateY(-8px);
+
+            box-shadow: 0 0 20px #4da6ff;
+        }
+
+
+        /* SKILL IMAGES */
+
+        .logo1,
+        .logo2,
+        .logo3 {
+
+            width: 180px;
+            height: 180px;
+
+            object-fit: contain;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .last1 {
+            width: 100%;
+
+            display: flex;
+
+            justify-content: center;
+
+            text-align: center;
+
+            margin-top: 20px;
+        }
+
+
+        .last2 {
+            text-decoration: none;
+
+            font-size: 18px;
+
+            color: antiquewhite;
+
+            transition: 0.3s;
+        }
+
+
+        .last2:hover {
+            color: #4da6ff;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 1100px) {
+
+            .header {
+                padding: 0 25px;
+            }
+
+
+            .goto {
+                gap: 25px;
+            }
+
+
+            .hero {
+                padding: 60px 5% 40px;
+            }
+
+
+            .profile-image {
+                flex: 0 0 400px;
+            }
+
+
+            .image1 {
+                width: 400px;
+                height: 400px;
+
+                object-position: center 25%;
+            }
+
+
+            .experience {
+                gap: 18px;
+            }
+
+
+            .fronted,
+            .java,
+            .linux {
+                font-size: 25px;
+                min-height: 320px;
+            }
+
+
+            .logo1,
+            .logo2,
+            .logo3 {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+
+        /* =========================
+           TABLET / SMALL LAPTOP
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .header {
+                min-height: 70px;
+
+                padding: 15px 20px;
+
+                flex-wrap: wrap;
+
+                gap: 15px;
+            }
+
+
+            .goto {
+                width: 100%;
+
+                justify-content: center;
+
+                gap: 25px;
+            }
+
+
+            .hero {
+                min-height: auto;
+
+                flex-direction: column;
+
+                text-align: center;
+
+                padding: 60px 20px;
+            }
+
+
+            .hero-text {
+                width: 100%;
+            }
+
+
+            .developer,
+            .developer1 {
+                font-size: 85px;
+            }
+
+
+            .profile-image {
+                width: 100%;
+
+                flex: none;
+
+                margin-top: 20px;
+            }
+
+
+            .image1 {
+                width: 350px;
+                height: 350px;
+
+                object-position: center 25%;
+            }
+
+
+            .about {
+                padding: 50px 25px 30px;
+            }
+
+
+            .ankit-name {
+                text-align: center;
+            }
+
+
+            .technical {
+                text-align: center;
+            }
+
+
+            .experience {
+                grid-template-columns: 1fr;
+
+                max-width: 600px;
+
+                margin: 0 auto 50px;
+            }
+
+
+            .fronted,
+            .java,
+            .linux {
+                min-height: 300px;
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .header {
+                padding: 15px;
+
+                flex-direction: column;
+
+                justify-content: center;
+            }
+
+
+            .web {
+                font-size: 18px;
+            }
+
+
+            .goto {
+                width: 100%;
+
+                gap: 15px;
+
+                justify-content: space-between;
+            }
+
+
+            .color,
+            .Home3 {
+                font-size: 13px;
+            }
+
+
+            .hero {
+                padding: 45px 15px 35px;
+            }
+
+
+            .developer,
+            .developer1 {
+                font-size: 58px;
+
+                line-height: 1;
+            }
+
+
+            .developer1 {
+                margin-top: 5px;
+            }
+
+
+            .profile-image {
+                margin-top: 35px;
+            }
+
+
+            .image1 {
+                width: 270px;
+                height: 270px;
+
+                object-fit: cover;
+
+                /*
+                  Keeps your face properly positioned.
+                */
+                object-position: center 25%;
+            }
+
+
+            .resume-button {
+                margin-top: 20px;
+
+                font-size: 16px;
+
+                padding: 10px 25px;
+            }
+
+
+            .about {
+                padding: 40px 15px 25px;
+            }
+
+
+            .ankit-name {
+                font-size: 42px;
+
+                text-align: center;
+
+                margin-bottom: 45px;
+            }
+
+
+            .technical {
+                font-size: 30px;
+
+                text-align: center;
+
+                margin-bottom: 25px;
+            }
+
+
+            .experience {
+                width: 100%;
+
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+            }
+
+
+            .fronted,
+            .java,
+            .linux {
+
+                width: 100%;
+
+                min-height: 280px;
+
+                padding: 20px;
+
+                font-size: 24px;
+            }
+
+
+            .logo1,
+            .logo2,
+            .logo3 {
+
+                width: 130px;
+                height: 130px;
+
+                margin-bottom: 15px;
+            }
+
+
+            .last2 {
+                font-size: 14px;
+            }
+        }
+
+
+        /* =========================
+           VERY SMALL MOBILE
+        ========================= */
+
+        @media (max-width: 380px) {
+
+            .goto {
+                gap: 10px;
+            }
+
+
+            .color,
+            .Home3 {
+                font-size: 11px;
+            }
+
+
+            .developer,
+            .developer1 {
+                font-size: 50px;
+            }
+
+
+            .image1 {
+                width: 230px;
+                height: 230px;
+
+                object-position: center 25%;
+            }
+
+
+            .ankit-name {
+                font-size: 36px;
+            }
+
+
+            .fronted,
+            .java,
+            .linux {
+                min-height: 250px;
+
+                font-size: 21px;
+            }
+
+
+            .logo1,
+            .logo2,
+            .logo3 {
+                width: 110px;
+                height: 110px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="header">
+
+        <div class="web">
+            <p>WebDev</p>
+        </div>
+
+
+        <nav class="goto">
+
+            <a class="Home3" href="profile.html">
+                HOME
+            </a>
+
+            <a class="color" href="skill.html">
+                SKILLS
+            </a>
+
+            <a class="color" href="project.html">
+                PROJECT
+            </a>
+
+            <a class="color" href="connect.html">
+                CONNECT
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+
+        <!-- LEFT -->
+
+        <div class="hero-text">
+
+            <h1 class="developer">
+                WEB
+            </h1>
+
+            <h1 class="developer1">
+                Developer
+            </h1>
+
+        </div>
+
+
+
+        <!-- RIGHT -->
+
+        <div class="profile-image">
+
+            <img
+                class="image1"
+                src="WhatsApp Image 2026-09-28 at 23.09.09.jpeg"
+                alt="Ankit Kumar">
+
+           
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section class="about">
+
+
+        <h2 class="ankit-name">
+            Ankit Kumar
+        </h2>
+
+
+
+        <!-- =========================
+             TECHNICAL EXPERTISE
+        ========================= -->
+
+        <h2 class="technical">
+            Technical Expertise
+        </h2>
+
+
+
+        <!-- =========================
+             SKILLS
+        ========================= -->
+
+        <div class="experience">
+
+
+            <!-- FRONTEND -->
+
+            <button class="fronted">
+
+                <img
+                    class="logo1"
+                    src="code-icon-black-background-black-flat-style-vector-illustration-code-icon-black-background-black-flat-style-vector-168420814.webp"
+                    alt="Frontend">
+
+                <span>
+                    Frontend Development
+                </span>
+
+                <span>
+                    HTML CSS
+                </span>
+
+            </button>
+
+
+
+            <!-- JAVA -->
+
+            <button class="java">
+
+                <img
+                    class="logo2"
+                    src="images (1).png"
+                    alt="Java">
+
+                <span>
+                    JAVA
+                </span>
+
+                <span>
+                    Programming
+                </span>
+
+            </button>
+
+
+
+            <!-- LINUX -->
+
+            <button class="linux">
+
+                <img
+                    class="logo3"
+                    src="images (2).png"
+                    alt="Linux">
+
+                <span>
+                    Linux
+                </span>
+
+                <span>
+                    Programming
+                </span>
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             FOOTER
+        ========================= -->
+
+        <div class="last1">
+
+            <a
+                class="last2"
+                href="profile.html">
+
+                @ 2026 WebDev. All rights reserved.
+
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+</body>
+
+</html>
